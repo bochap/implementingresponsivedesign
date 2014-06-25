@@ -41,7 +41,6 @@ var Utils = {
         }
 
         return output;
-
     }
 };
 
@@ -80,7 +79,8 @@ window.onload = function() {
             var linkHref = videoLink.getAttribute('href')
             var result = Utils.getEmbed(linkHref);
             var parent = videoLink.parentNode;
-            parent.innerHTML = result + videoLink.parentNode.innerHtml;
+            var parentHtml = parent.innerHTML;
+            parent.innerHTML = result + parentHtml;
             parent.removeChild(document.getElementById('video'));
         }
     }
